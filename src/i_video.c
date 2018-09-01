@@ -383,6 +383,8 @@ dboolean GetCapsLockState(void)
     return !!(GetKeyState(VK_CAPITAL) & 0xFFFF);
 #elif defined(X11)
     return !!(SDL_GetModState() & KMOD_CAPS);
+#else
+    return 1;
 #endif
 }
 
